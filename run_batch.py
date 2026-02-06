@@ -26,9 +26,9 @@ from pathlib import Path
 # Config
 # ---------------------------------------------------------------------------
 MODEL = "claude-haiku-4-5-20251001"
-DATA_DIR = Path(__file__).parent.parent / "data"
-PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
-SEED_FILE = DATA_DIR / "seed_counties.csv"
+DATA_DIR = Path(__file__).parent / "data"
+PROMPTS_DIR = Path(__file__).parent / "prompts"
+SEED_FILE = Path(__file__).parent / "seed_counties.csv"
 OUTPUT_FILE = DATA_DIR / "counties.csv"
 RAW_DIR = DATA_DIR / "raw_responses"
 
@@ -53,8 +53,7 @@ For each county, search for:
 
 Classify each county using ONLY these access tiers:
 - "free" — Users can search, view, AND download/print document images online at no cost, no subscription, no account required (or free account only)
-- "partial" — Users can search and/or view for free, but must pay for downloads, copies, or certified documents. OR: free account required for viewing.
-- "paywalled" — Any subscription, prepaid account, or per-use payment is required to search OR view records online. This includes LANDEX systems where index search may be free but document viewing requires payment.
+- "paywalled" — Any payment required to access full records. This includes: subscriptions, prepaid accounts, per-use fees, pay-to-download, pay-for-copies, or limited free views with paid full access. If only some data is free but full access requires payment, classify as paywalled.
 - "none" — No online access to deed records. In-person only.
 
 For vendor identification, look for these known vendors:
@@ -79,7 +78,7 @@ For each county, return a JSON object with these exact fields:
   "recorder_url": "official recorder of deeds URL or county page URL",
   "online_system": "name of the online records system",
   "vendor": "third-party vendor name or 'county-built' or 'none'",
-  "access_tier": "free|partial|paywalled|none",
+  "access_tier": "free|paywalled|none",
   "free_search": true/false,
   "free_view": true/false,
   "free_download": true/false,
