@@ -13,8 +13,7 @@ For each county, search for:
 
 Classify each county using ONLY these access tiers:
 - "free" — Users can search, view, AND download/print document images online at no cost, no subscription, no account required (or free account only)
-- "partial" — Users can search and/or view for free, but must pay for downloads, copies, or certified documents. OR: free account required for viewing.
-- "paywalled" — Any subscription, prepaid account, or per-use payment is required to search OR view records online. This includes LANDEX systems where index search may be free but document viewing requires payment.
+- "paywalled" — Any payment required to access full records. This includes: subscriptions, prepaid accounts, per-use fees, pay-to-download, pay-for-copies, or limited free views with paid full access. If only some data is free but full access requires payment, classify as paywalled.
 - "none" — No online access to deed records. In-person only.
 
 For vendor identification, look for these known vendors:
